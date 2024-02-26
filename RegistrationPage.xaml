@@ -1,0 +1,106 @@
+﻿<Window x:Class="MedicalWPF.RegistrationPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MedicalWPF"
+        mc:Ignorable="d"
+        Closing="Window_Closing"
+        Title="Большие кабаны (ИС) - Регистрация пациентов" Height="450" Width="800">
+    <Grid Background="Bisque">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.ColumnSpan="8">
+            <TextBlock Text="Регистрация пациентов" FontSize="24" TextAlignment="Center" Margin="0 15"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2">
+            <TextBlock Text="Имя:"/>
+            <TextBox x:Name="FirstNameTxtB"/>
+        </StackPanel>
+        
+        <StackPanel Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2">
+            <TextBlock Text="Фамилия:"/>
+            <TextBox x:Name="SecondNameTxtB"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2">
+            <TextBlock Text="Отчество:"/>
+            <TextBox x:Name="PatronymicTxtB"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2">
+            <TextBlock Text="Паспорт (серия и номер):"/>
+            <TextBox x:Name="PassportTxtB"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2">
+            <TextBlock Text="Дата рождения"/>
+            <DatePicker Name="BirthDayPicker"/>
+        </StackPanel>
+        
+        <StackPanel Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2">
+            <TextBlock Text="Пол"/>
+            <ComboBox Name="SexCmbBox">
+                <ComboBoxItem Content="Мужской"/> 
+                <ComboBoxItem Content="Женский"/>
+            </ComboBox>
+        </StackPanel>
+
+        <StackPanel Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="2">
+            <TextBlock Text="Номер телефона"/>
+            <TextBox x:Name="PhonenumberTxtB"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Grid.Column="4" Grid.ColumnSpan="2">
+            <TextBlock Text="Фото пациента"/>
+            <Button Content="Выбрать фото" Name="SelectPhotoBtn" Click="SelectPhotoBtn_Click"/>
+            <Image x:Name="PatientPhoto" Width="100" Height="120" Margin="250 -38" Stretch="Fill"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="5" Grid.Column="4" Grid.ColumnSpan="2">
+            <TextBlock Text="Электронная почта"/>
+            <TextBox x:Name="EmailTxtB"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="6" Grid.Column="4" Grid.ColumnSpan="2">
+            <TextBlock Text="Адрес проживания"/>
+            <TextBox x:Name="AddressTxtB"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="7" Grid.Column="4" Grid.ColumnSpan="2">
+            <TextBlock Text="Номер полиса"/>
+            <TextBox x:Name="PolicyNumTxtB"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="8" Grid.Column="4" Grid.ColumnSpan="2">
+            <TextBlock Text="Дата окончания полиса"/>
+            <DatePicker Name="PolicyExpDatePicker"/>
+        </StackPanel>
+
+        <Button Content="Зарегистрировать" x:Name="RegPatientBtn" Click="RegPatientBtn_Click" Grid.Column="4" Grid.Row="9" Grid.ColumnSpan="2" Height="30" BorderThickness="0"/>
+        <Button Content="Найти" x:Name="SearchPatientBtn" Click="SearchPatientBtn_Click" Grid.Column="1" Grid.Row="9" Grid.ColumnSpan="2" Height="30" BorderThickness="0"/>
+
+    </Grid>
+</Window>

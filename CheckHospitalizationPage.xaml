@@ -1,0 +1,93 @@
+﻿<Window x:Class="MedicalWPF.CheckHospitalizationPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MedicalWPF"
+        mc:Ignorable="d"
+        Title="CheckHospitalizationPage" Height="623" Width="975">
+    <Grid Background="Bisque">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.ColumnSpan="6" HorizontalAlignment="Center">
+            <TextBlock Text="Оформление госпитализации" FontSize="24" Margin="0 15" FontWeight="Medium"/>
+        </StackPanel>
+
+        <Border BorderBrush="Gray" BorderThickness="0.35" Grid.Row="2" Grid.RowSpan="6" Grid.Column="1" Grid.ColumnSpan="2" CornerRadius="10" Margin="-7"/>
+
+        <StackPanel Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="1">
+            <TextBlock Text="Имя"/>
+            <TextBox x:Name="FirstNameTxb" Width="150" HorizontalAlignment="Left"/>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="1">
+            <TextBlock Text="Фамилия"/>
+            <TextBox x:Name="SecondNameTxb" Width="150" HorizontalAlignment="Left"/>
+        </StackPanel>
+        <StackPanel Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2">
+            <TextBlock Text="Отчество"/>
+            <TextBox x:Name="PatronymicTxb"/>
+        </StackPanel>
+        <StackPanel Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2">
+            <TextBlock Text="Диагноз"/>
+            <TextBox x:Name="DiagnosisTxb"/>
+        </StackPanel>
+        <StackPanel Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2">
+            <TextBlock Text="Причина госпитализации"/>
+            <TextBox x:Name="PurposeTxb"/>
+        </StackPanel>
+        <StackPanel Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2">
+            <TextBlock Text="Первый день"/>
+            <DatePicker x:Name="FirstDayTxb" Width="150" HorizontalAlignment="Left"/>
+        </StackPanel>
+        <StackPanel Grid.Row="6" Grid.Column="2" Grid.ColumnSpan="1">
+            <TextBlock Text="Последний день"/>
+            <DatePicker x:Name="LastDayTxb" Width="150" HorizontalAlignment="Left"/>
+        </StackPanel>
+        <StackPanel Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="1" Width="150" HorizontalAlignment="Left">
+            <TextBlock Text="Отделение"/>
+            <TextBox x:Name="DepartmentTxb"/>
+        </StackPanel>
+        <StackPanel Grid.Row="7" Grid.Column="2" Grid.ColumnSpan="1" Width="150" HorizontalAlignment="Left">
+            <TextBlock Text="Платно"/>
+            <TextBox x:Name="IsPaidTxb"/>
+        </StackPanel>
+
+
+        <StackPanel Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="2" Margin="35 0 0 0">
+            <TextBlock Text="Статус:" Margin="0 0 0 5"/>
+            <TextBlock Name="StatusTxb" Text="Не определено" FontWeight="Medium"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="2" Margin="35 0 0 0" >
+            <TextBlock Text="Код"/>
+            <StackPanel Orientation="Horizontal">
+                <TextBox x:Name="CodeTxb" Width="60"/>
+                <Button x:Name="CheckCodeBtn" Content="Проверить" Click="CheckCodeBtn_Click" Width="100" Margin="20 0 0 0"/>
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel Grid.Row="4" Grid.RowSpan="4" Grid.Column="3" Grid.ColumnSpan="2" Margin="35 0 0 0">
+            <Button Content="Оформить госпитализацию" Name="ApproveHospitalizationBtn" Click="ApproveHospitalizationBtn_Click" Margin="0 0 0 5"/>
+            <Button Content="Отказ от госпитализации" Name="CancelHospitalizationBtn" Click="CancelHospitalizationBtn_Click" Margin="0 0 0 5"/>
+            <Button Content="Отмена госпитализации терапевтом" Name="CancelByTerapistBtn" Click="CancelByTerapistBtn_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

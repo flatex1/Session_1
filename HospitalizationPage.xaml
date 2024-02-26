@@ -1,0 +1,40 @@
+﻿<Window x:Class="MedicalWPF.HospitalizationPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MedicalWPF"
+        mc:Ignorable="d"
+        Title="Госпитализация пациентов" Height="450" Width="800">
+    <Grid Background="Bisque">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0">
+            <DataGrid AutoGenerateColumns="False" Height="400" Name="DataGrid">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Код" Width="80" Binding="{Binding HospitalCode}" Foreground="Black"/>
+                    <DataGridTextColumn Header="Диагноз" Width="80" Binding="{Binding Diagnosis}"/>
+                    <DataGridTextColumn Header="Причина" Width="80" Binding="{Binding Purpose}"/>
+                    <DataGridTextColumn Header="Начало"  Width="80" Binding="{Binding FirstDay}"/>
+                    <DataGridTextColumn Header="Конец"  Width="80" Binding="{Binding LastDay}"/>
+                    <DataGridTextColumn Header="Отделение"  Width="120" Binding="{Binding Department}"/>
+                    <DataGridTextColumn Header="Платно"  Width="80" Binding="{Binding IsPaid}"/>
+                    <DataGridTextColumn Header="Статус"  Width="80" Binding="{Binding Status}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button x:Name="RegBtn" Content="Зарегистрировать" Click="RegBtn_Click" Width="120" Height="30" Margin="30 0"/>
+
+            <Button x:Name="RefreshBtn" Content="Обновить" Click="RefreshBtn_Click" Width="120" Height="30" Margin="30 0"/>
+            <Button x:Name="AddHospitalizationBtn" Content="Оформить" Click="AddHospitalizationBtn_Click" Width="120" Height="30" Margin="30 0"/>
+        </StackPanel>
+    </Grid>
+</Window>
